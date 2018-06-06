@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'hacker.spiders'
 #USER_AGENT = 'hacker (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -81,6 +81,12 @@ ROBOTSTXT_OBEY = True
 # Enable showing throttling stats for every response received:
 #AUTOTHROTTLE_DEBUG = False
 
+LOG_FILE = "hacker.log"
+LOG_FORMAT = '%(asctime)s [%(name)s] %(levelname)s: %(filename)s %(funcName)s %(lineno)d: %(message)s'
+LOG_DATEFORMAT = '%Y-%m-%d %H:%M:%S'
+LOG_LEVEL = 'INFO'
+LOG_STDOUT = True
+LOG_ENCODING = 'utf-8'
 # Enable and configure HTTP caching (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 #HTTPCACHE_ENABLED = True

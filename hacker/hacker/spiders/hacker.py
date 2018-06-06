@@ -14,3 +14,4 @@ class baiduSpider(ListeningKafkaSpider):
         a = response.url
 
         print(a)
+        print(u"访问链接成功")
