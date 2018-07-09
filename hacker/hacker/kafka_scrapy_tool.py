@@ -7,6 +7,7 @@ import settings
 from settings import SCRAPY_KAFKA_HOSTS
 from settings import SCRAPY_KAFKA_TOPIC
 from settings import SCRAPY_KAFKA_SPIDER_CONSUMER_GROUP
+from settings import CLIENT_ID
 from kafka import KafkaConsumer
 
 
@@ -36,11 +37,12 @@ class KafkaSpiderMixin(object):
         topic = SCRAPY_KAFKA_TOPIC
         hosts = SCRAPY_KAFKA_HOSTS
         consumer_group = SCRAPY_KAFKA_SPIDER_CONSUMER_GROUP
+        client_id = CLIENT_ID
 
         self.consumer = KafkaConsumer(topic,
                                       group_id=consumer_group,
                                       bootstrap_servers=hosts,
-                                      client_id="scrapy_kafka_tool_13",
+                                      client_id=client_id,
                                       #retry_backoff_ms=5000
                                       )
 
