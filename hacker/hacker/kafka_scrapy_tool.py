@@ -48,6 +48,8 @@ class KafkaSpiderMixin(object):
 
         self.crawler.signals.connect(self.spider_idle, signal=signals.spider_idle)
         self.crawler.signals.connect(self.item_scraped, signal=signals.item_scraped)
+        print(self.crawler.stats.get_stats())
+        print("xxx")
         self.log("kafka_topic URLs from kafka topic '%s'" % topic)
 
     def next_request(self):
@@ -65,13 +67,14 @@ class KafkaSpiderMixin(object):
         #     if isinstance(req, Request):
         #         self.crawler.engine.crawl(req, spider=self)
         
-        message = self.consumer.poll(max_records=10)
+        message = self.consumer.poll(max_records=1)
         # self.log(u"拉取信息")
         # print(message)
         # TODO 处理单条信息
 
         if message:
-            self.log(u"")
+            self.log(u"xxxx")
+            print(self.crawler.stats.get_stats())
             # message是
             for k in message.values():
                 for i in k:
