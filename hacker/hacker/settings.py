@@ -98,3 +98,6 @@ SCRAPY_KAFKA_HOSTS = 'blackbox01.jry.com:6667'
 SCRAPY_KAFKA_SPIDER_CONSUMER_GROUP = 'scrapy-kafka-baidu'
 SCRAPY_KAFKA_TOPIC = 'hacker-starturls'
 CLIENT_ID = 'client_1'
+
+SCRAPY_QUERRY_LENGTH = 10
+MAX_RECORDS = 500
